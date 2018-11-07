@@ -23,10 +23,9 @@ function setup(){
   var recognition = new webkitSpeechRecognition();
   recognition.continuous = true;
   recognition.interimResults = false;
-  background(100);
-  recognition.onstart = function() { background(200); }
-  recognition.onresult = function(event) { console.log("result", event.results[0][0].transcript); text(event.results[0][0].transcript,10,10);}
-  recognition.onerror = function(event) { text(event.error,10,10);}
+  recognition.onstart = function() { background(0,100,0); }
+  recognition.onresult = function(event) { background(100); console.log("result", event.results[0][0].transcript); text(event.results[0][0].transcript,10,10);}
+  recognition.onerror = function(event) { text(event.error,10,10); background(255,0,0);}
   recognition.onend = function() { console.log("ended"); }
   recognition.start();
 
