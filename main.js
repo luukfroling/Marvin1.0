@@ -14,22 +14,22 @@ function preload(){
 function setup(){
   ai = new neuralNetwork([27, 10, 3]);
   createCanvas(500,500);
-  //initSpeech();
-  //speak.speak("hello");
-  if (!('webkitSpeechRecognition' in window)) {
-  console.log("u fucked");
-  background(0);
-} else {
-  var recognition = new webkitSpeechRecognition();
-  recognition.continuous = true;
-  recognition.interimResults = false;
-  recognition.onstart = function() { background(0,100,0); }
-  recognition.onresult = function(event) { background(100); console.log("result", event.results[0][0].transcript); text(event.results[0][0].transcript,10,10);}
-  recognition.onerror = function(event) { text(event.error,10,10); background(255,0,0);}
-  recognition.onend = function() { console.log("ended"); }
-  recognition.start();
+  initSpeech();
+  speak.speak("hello");
+//   if (!('webkitSpeechRecognition' in window)) {
+//   console.log("u fucked");
+//   background(0);
+// } else {
+//   var recognition = new webkitSpeechRecognition();
+//   recognition.continuous = true;
+//   recognition.interimResults = false;
+//   recognition.onstart = function() { background(0,100,0); }
+//   recognition.onresult = function(event) { background(100); console.log("result", event.results[0][0].transcript); text(event.results[0][0].transcript,10,10);}
+//   recognition.onerror = function(event) { text(event.error,10,10); background(255,0,0);}
+//   recognition.onend = function() { console.log("ended"); }
+//   recognition.start();
 
-}
+// }
 }
 
 function draw(){
